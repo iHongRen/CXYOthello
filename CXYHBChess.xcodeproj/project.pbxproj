@@ -22,6 +22,18 @@
 		040BD30819B58E9F001F6966 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 040BD2EC19B58E9E001F6966 /* CoreData.framework */; };
 		040BD31019B58E9F001F6966 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 040BD30E19B58E9F001F6966 /* InfoPlist.strings */; };
 		040BD31219B58E9F001F6966 /* CXYHBChessTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 040BD31119B58E9F001F6966 /* CXYHBChessTests.m */; };
+		040BD31E19B59134001F6966 /* CXYMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 040BD31C19B59134001F6966 /* CXYMainViewController.m */; };
+		040BD31F19B59134001F6966 /* CXYMainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 040BD31D19B59134001F6966 /* CXYMainViewController.xib */; };
+		040BD32619B59ED8001F6966 /* CXYGameAreaView.m in Sources */ = {isa = PBXBuildFile; fileRef = 040BD32519B59ED8001F6966 /* CXYGameAreaView.m */; };
+		040BD32919B5B956001F6966 /* CXYNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 040BD32819B5B956001F6966 /* CXYNode.m */; };
+		04217E0319B80F6E00E2A2F7 /* CXYGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04217E0119B80F6E00E2A2F7 /* CXYGameViewController.m */; };
+		04217E0419B80F6E00E2A2F7 /* CXYGameViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04217E0219B80F6E00E2A2F7 /* CXYGameViewController.xib */; };
+		04217E0D19B8181C00E2A2F7 /* CXYGameSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04217E0B19B8181C00E2A2F7 /* CXYGameSettingViewController.m */; };
+		04217E0E19B8181C00E2A2F7 /* CXYGameSettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04217E0C19B8181C00E2A2F7 /* CXYGameSettingViewController.xib */; };
+		04217E1319B83BE200E2A2F7 /* CXYAIComputer.m in Sources */ = {isa = PBXBuildFile; fileRef = 04217E1219B83BE200E2A2F7 /* CXYAIComputer.m */; };
+		0444E01019CAE5450029D3E0 /* CXYUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 0444E00F19CAE5450029D3E0 /* CXYUtils.m */; };
+		04A98B5D19BE96CD00ED474C /* CXYParent.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A98B5C19BE96CD00ED474C /* CXYParent.m */; };
+		04A98B6019BE9B5A00ED474C /* CXYPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A98B5F19BE9B5A00ED474C /* CXYPlayer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +65,29 @@
 		040BD30D19B58E9F001F6966 /* CXYHBChessTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CXYHBChessTests-Info.plist"; sourceTree = "<group>"; };
 		040BD30F19B58E9F001F6966 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		040BD31119B58E9F001F6966 /* CXYHBChessTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CXYHBChessTests.m; sourceTree = "<group>"; };
+		040BD31B19B59134001F6966 /* CXYMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXYMainViewController.h; sourceTree = "<group>"; };
+		040BD31C19B59134001F6966 /* CXYMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXYMainViewController.m; sourceTree = "<group>"; };
+		040BD31D19B59134001F6966 /* CXYMainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CXYMainViewController.xib; sourceTree = "<group>"; };
+		040BD32019B59476001F6966 /* CXYDefines.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CXYDefines.h; sourceTree = "<group>"; };
+		040BD32419B59ED8001F6966 /* CXYGameAreaView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXYGameAreaView.h; sourceTree = "<group>"; };
+		040BD32519B59ED8001F6966 /* CXYGameAreaView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXYGameAreaView.m; sourceTree = "<group>"; };
+		040BD32719B5B956001F6966 /* CXYNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXYNode.h; sourceTree = "<group>"; };
+		040BD32819B5B956001F6966 /* CXYNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXYNode.m; sourceTree = "<group>"; };
+		04217E0019B80F6E00E2A2F7 /* CXYGameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXYGameViewController.h; sourceTree = "<group>"; };
+		04217E0119B80F6E00E2A2F7 /* CXYGameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXYGameViewController.m; sourceTree = "<group>"; };
+		04217E0219B80F6E00E2A2F7 /* CXYGameViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CXYGameViewController.xib; sourceTree = "<group>"; };
+		04217E0A19B8181C00E2A2F7 /* CXYGameSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXYGameSettingViewController.h; sourceTree = "<group>"; };
+		04217E0B19B8181C00E2A2F7 /* CXYGameSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXYGameSettingViewController.m; sourceTree = "<group>"; };
+		04217E0C19B8181C00E2A2F7 /* CXYGameSettingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CXYGameSettingViewController.xib; sourceTree = "<group>"; };
+		04217E1119B83BE200E2A2F7 /* CXYAIComputer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXYAIComputer.h; sourceTree = "<group>"; };
+		04217E1219B83BE200E2A2F7 /* CXYAIComputer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXYAIComputer.m; sourceTree = "<group>"; };
+		0431F11219BDA8200055F65C /* CXYEnum.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CXYEnum.h; sourceTree = "<group>"; };
+		0444E00E19CAE5450029D3E0 /* CXYUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXYUtils.h; sourceTree = "<group>"; };
+		0444E00F19CAE5450029D3E0 /* CXYUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXYUtils.m; sourceTree = "<group>"; };
+		04A98B5B19BE96CD00ED474C /* CXYParent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXYParent.h; sourceTree = "<group>"; };
+		04A98B5C19BE96CD00ED474C /* CXYParent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXYParent.m; sourceTree = "<group>"; };
+		04A98B5E19BE9B5A00ED474C /* CXYPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXYPlayer.h; sourceTree = "<group>"; };
+		04A98B5F19BE9B5A00ED474C /* CXYPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXYPlayer.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +152,29 @@
 			children = (
 				040BD2F719B58E9E001F6966 /* CXYAppDelegate.h */,
 				040BD2F819B58E9E001F6966 /* CXYAppDelegate.m */,
+				040BD31B19B59134001F6966 /* CXYMainViewController.h */,
+				040BD31C19B59134001F6966 /* CXYMainViewController.m */,
+				040BD31D19B59134001F6966 /* CXYMainViewController.xib */,
+				04217E0019B80F6E00E2A2F7 /* CXYGameViewController.h */,
+				04217E0119B80F6E00E2A2F7 /* CXYGameViewController.m */,
+				04217E0219B80F6E00E2A2F7 /* CXYGameViewController.xib */,
+				04217E0A19B8181C00E2A2F7 /* CXYGameSettingViewController.h */,
+				04217E0B19B8181C00E2A2F7 /* CXYGameSettingViewController.m */,
+				04217E0C19B8181C00E2A2F7 /* CXYGameSettingViewController.xib */,
+				040BD32419B59ED8001F6966 /* CXYGameAreaView.h */,
+				040BD32519B59ED8001F6966 /* CXYGameAreaView.m */,
+				04217E1119B83BE200E2A2F7 /* CXYAIComputer.h */,
+				04217E1219B83BE200E2A2F7 /* CXYAIComputer.m */,
+				040BD32719B5B956001F6966 /* CXYNode.h */,
+				040BD32819B5B956001F6966 /* CXYNode.m */,
+				040BD32019B59476001F6966 /* CXYDefines.h */,
+				0431F11219BDA8200055F65C /* CXYEnum.h */,
+				04A98B5B19BE96CD00ED474C /* CXYParent.h */,
+				04A98B5C19BE96CD00ED474C /* CXYParent.m */,
+				04A98B5E19BE9B5A00ED474C /* CXYPlayer.h */,
+				04A98B5F19BE9B5A00ED474C /* CXYPlayer.m */,
+				0444E00E19CAE5450029D3E0 /* CXYUtils.h */,
+				0444E00F19CAE5450029D3E0 /* CXYUtils.m */,
 				040BD2FD19B58E9E001F6966 /* Images.xcassets */,
 				040BD2FA19B58E9E001F6966 /* CXYHBChess.xcdatamodeld */,
 				040BD2EF19B58E9E001F6966 /* Supporting Files */,
@@ -229,7 +287,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04217E0E19B8181C00E2A2F7 /* CXYGameSettingViewController.xib in Resources */,
+				04217E0419B80F6E00E2A2F7 /* CXYGameViewController.xib in Resources */,
 				040BD2F319B58E9E001F6966 /* InfoPlist.strings in Resources */,
+				040BD31F19B59134001F6966 /* CXYMainViewController.xib in Resources */,
 				040BD2FE19B58E9E001F6966 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -250,8 +311,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				040BD2F519B58E9E001F6966 /* main.m in Sources */,
+				04217E0319B80F6E00E2A2F7 /* CXYGameViewController.m in Sources */,
 				040BD2F919B58E9E001F6966 /* CXYAppDelegate.m in Sources */,
+				040BD32919B5B956001F6966 /* CXYNode.m in Sources */,
+				04217E0D19B8181C00E2A2F7 /* CXYGameSettingViewController.m in Sources */,
+				04217E1319B83BE200E2A2F7 /* CXYAIComputer.m in Sources */,
+				0444E01019CAE5450029D3E0 /* CXYUtils.m in Sources */,
+				04A98B5D19BE96CD00ED474C /* CXYParent.m in Sources */,
+				04A98B6019BE9B5A00ED474C /* CXYPlayer.m in Sources */,
+				040BD31E19B59134001F6966 /* CXYMainViewController.m in Sources */,
 				040BD2FC19B58E9E001F6966 /* CXYHBChess.xcdatamodeld in Sources */,
+				040BD32619B59ED8001F6966 /* CXYGameAreaView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -325,7 +395,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 			};
@@ -357,7 +427,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -371,6 +441,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CXYHBChess/CXYHBChess-Prefix.pch";
 				INFOPLIST_FILE = "CXYHBChess/CXYHBChess-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -384,6 +455,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CXYHBChess/CXYHBChess-Prefix.pch";
 				INFOPLIST_FILE = "CXYHBChess/CXYHBChess-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -448,6 +520,7 @@
 				040BD31719B58E9F001F6966 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		040BD31819B58E9F001F6966 /* Build configuration list for PBXNativeTarget "CXYHBChessTests" */ = {
 			isa = XCConfigurationList;
@@ -456,6 +529,7 @@
 				040BD31A19B58E9F001F6966 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

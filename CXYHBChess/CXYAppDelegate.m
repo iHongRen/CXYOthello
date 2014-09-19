@@ -7,6 +7,7 @@
 //
 
 #import "CXYAppDelegate.h"
+#import "CXYMainViewController.h"
 
 @implementation CXYAppDelegate
 
@@ -16,8 +17,13 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
+    CXYMainViewController *mainVC = [[CXYMainViewController alloc]initWithNibName:@"CXYMainViewController" bundle:nil];
+    UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:mainVC];
+    self.window.rootViewController = nav;
+    
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;
