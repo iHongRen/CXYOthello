@@ -12,7 +12,7 @@
 
 @property (nonatomic,assign)GAMESTATE gameState;
 
-- (void)initNodesWithPlayer:(CXYParent*)player;
-- (void)calculateNodeNum;
+- (void)onInitNodesWithPlayer:(CXYParent*)player;
+- (void)onCalculateNodeNum;
 - (void)onJudgeWinForPlayer:(CXYParent*)player OtherPlayer:(CXYParent*)OtherPlayer;
 @end

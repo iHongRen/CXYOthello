@@ -11,7 +11,7 @@
 #import "CXYAIComputer.h"
 #import "CXYPlayer.h"
 #import "CXYGameSettingViewController.h"
-
+#import <AVFoundation/AVFoundation.h>
 @interface CXYGameViewController ()
 {
     IBOutlet CXYGameAreaView *gameAreaView;
@@ -22,6 +22,8 @@
     GAMELEVEL _gameLevel;
     
     WHODOWNNODE whoDownNode;
+    
+    AVAudioPlayer *audioPlayer;
 }
 @end
 
@@ -39,7 +41,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"设置" style:UIBarButtonItemStylePlain target:self action:@selector(onGameSetting:)];
+     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:kSETTING style:UIBarButtonItemStylePlain target:self action:@selector(onGameSetting:)];
     
     savedNodesStateList = [[NSMutableArray alloc]init];
     aiComputer = [[CXYAIComputer alloc]init];
@@ -49,7 +51,7 @@
     player.owerStateColor = KBLACK;
     whoDownNode = PLAYER;
     
-    [self initChess];
+    [self onInitChess];
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(aiComputerPlayer) name:CXYAIDownNodeNotification object:nil];
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(onListenerBtnClick:) name:CXYPlayerDownNodeNotification object:nil];
     // Do any additional setup after loading the view from its nib.
@@ -58,7 +60,7 @@
 - (void)onGameSetting:(UIBarButtonItem*)sender
 {
     if (gameAreaView.gameState == GAMEING) {
-        kAlert(@"游戏中...不能设置哦！");
+        kAlert(kGAMING_MESSAGE);
         return;
     }
     __weak typeof(self) weakSelf = self;
@@ -74,7 +76,7 @@
     };
     gameSettingVC.saveBlock = ^{
         __strong __typeof(weakSelf)strongSelf = weakSelf;
-        [strongSelf initChess];
+        [strongSelf onInitChess];
     };
   
     [self presentViewController:gameSettingVC animated:YES completion:nil];
@@ -97,7 +99,7 @@
         whoDownNode = PLAYER;
         [player setHintState:gameAreaView];
         [gameAreaView onJudgeWinForPlayer:aiComputer OtherPlayer:player];
-        
+        [self onOpenSound];
         if ([player getCurrentAllowDownNodesInView:gameAreaView].count == 0) {
             [self aiComputerPlayer];
         }
@@ -121,6 +123,7 @@
             [player changeNodeStateInView:gameAreaView theNode:node];
             whoDownNode = AICOMPUTER;
             [gameAreaView onJudgeWinForPlayer:aiComputer OtherPlayer:player];
+            [self onOpenSound];
         }
         [self performSelector:@selector(onDelay) withObject:nil afterDelay:0.5];
     }
@@ -135,12 +138,12 @@
 - (IBAction)unDoChess:(id)sender
 {
     if (0 == savedNodesStateList.count) {
-        kAlert(@"已经是最初状态了哦！");
+        kAlert(kGAMEREADY_MESSAGE);
         return;
     }
     if (gameAreaView.gameState == GAMEING) {
         [player unDoNodeStateInView:gameAreaView Nodes:[savedNodesStateList lastObject]];
-        [gameAreaView calculateNodeNum];
+        [gameAreaView onCalculateNodeNum];
         [savedNodesStateList removeLastObject];
     }
 }
@@ -151,16 +154,27 @@
     if (GAMEREADY == gameAreaView.gameState) {
         return;
     }
-    [self initChess];
+    [self onInitChess];
 }
 
-- (void)initChess
+- (void)onInitChess
 {
     gameAreaView.gameState = GAMEREADY;
     [player clearHintState:gameAreaView];
-    [gameAreaView initNodesWithPlayer:player];
-    [gameAreaView calculateNodeNum];
+    [gameAreaView onInitNodesWithPlayer:player];
+    [gameAreaView onCalculateNodeNum];
     [savedNodesStateList removeAllObjects];
+}
+
+// 播放声音
+- (void)onOpenSound
+{
+    if (!audioPlayer) {
+        NSError *error = nil;
+        NSString *path = [[NSBundle mainBundle] pathForResource:@"sound" ofType:@"wav"];
+        audioPlayer = [[AVAudioPlayer alloc]initWithContentsOfURL:[NSURL fileURLWithPath:path] error:&error];
+    }
+    [audioPlayer play];
 }
 
 - (void)dealloc

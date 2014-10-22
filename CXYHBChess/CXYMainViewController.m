@@ -21,7 +21,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
-        self.navigationItem.title = @"黑白棋";
+        self.navigationItem.title = kMAIN_TITLE;
     }
     return self;
 }
@@ -35,7 +35,7 @@
 - (IBAction)onBattleWithComputer:(id)sender
 {
     CXYGameViewController *gameVC = [[CXYGameViewController alloc]initWithNibName:@"CXYGameViewController" bundle:nil];
-    gameVC.navigationItem.title = @"对战电脑";
+    gameVC.navigationItem.title = kGAME_TITLE;
     [self.navigationController pushViewController:gameVC animated:YES];
 }
 

@@ -39,7 +39,7 @@
         }
         case KHINT:
         {
-            self.backgroundColor = [UIColor greenColor];
+            self.backgroundColor = [UIColor grayColor];
             break;
         }
         case KCLEAR:

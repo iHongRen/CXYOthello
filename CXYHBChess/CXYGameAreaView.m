@@ -13,15 +13,10 @@
 
 #define kNodeWidth 30
 
-#define kBlackWin   @"黑方获胜"
-#define kWhiteWin   @"白方获胜"
-#define kDoubleWin  @"和棋"
-
-
 @implementation CXYGameAreaView
 {
-    NSInteger blackNum;
-    NSInteger whiteNum;
+    int blackNum;
+    int whiteNum;
       
     UILabel *blackLabel;
     UILabel *whiteLabel;
@@ -68,7 +63,7 @@
 }
 
 // 初始化棋盘上棋子状态
-- (void)initNodesWithPlayer:(CXYParent*)player
+- (void)onInitNodesWithPlayer:(CXYParent*)player
 {
     int k=0;
     for (int i=0; i<kSize; i++) {
@@ -87,7 +82,7 @@
 }
 
 // 计算棋盘上白黑棋子个数
-- (void)calculateNodeNum
+- (void)onCalculateNodeNum
 {
     blackNum = 0;
     whiteNum = 0;
@@ -107,7 +102,7 @@
 // 判断获胜
 - (void)onJudgeWinForPlayer:(CXYParent*)player OtherPlayer:(CXYParent*)OtherPlayer
 {
-    [self calculateNodeNum];
+    [self onCalculateNodeNum];
     if (0 == blackNum) {
         _gameState = GAMEOVER;
         kAlert(kWhiteWin);
@@ -119,7 +114,7 @@
          return;
     }
     if ([[player getCurrentAllowDownNodesInView:self] count]== 0 && [[OtherPlayer getCurrentAllowDownNodesInView:self] count]== 0) {
-        [self calculateNodeNum];
+        [self onCalculateNodeNum];
         if (blackNum > whiteNum) {
              _gameState = GAMEOVER;
               kAlert(kBlackWin);

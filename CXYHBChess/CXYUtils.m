@@ -8,6 +8,7 @@
 
 #import "CXYUtils.h"
 
+#pragma mark ---- notication -----
 NSString *const CXYAIDownNodeNotification     = @"CXYAIDownNodeNotification";
 NSString *const CXYPlayerDownNodeNotification = @"CXYPlayerDownNodeNotification";
 

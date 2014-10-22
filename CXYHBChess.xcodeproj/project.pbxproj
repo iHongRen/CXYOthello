@@ -34,6 +34,8 @@
 		0444E01019CAE5450029D3E0 /* CXYUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 0444E00F19CAE5450029D3E0 /* CXYUtils.m */; };
 		04A98B5D19BE96CD00ED474C /* CXYParent.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A98B5C19BE96CD00ED474C /* CXYParent.m */; };
 		04A98B6019BE9B5A00ED474C /* CXYPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A98B5F19BE9B5A00ED474C /* CXYPlayer.m */; };
+		74BC425219F75E9E00E6921E /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74BC425119F75E9E00E6921E /* AVFoundation.framework */; };
+		74BC425419F7615400E6921E /* sound.wav in Resources */ = {isa = PBXBuildFile; fileRef = 74BC425319F7615400E6921E /* sound.wav */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,6 +90,8 @@
 		04A98B5C19BE96CD00ED474C /* CXYParent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXYParent.m; sourceTree = "<group>"; };
 		04A98B5E19BE9B5A00ED474C /* CXYPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXYPlayer.h; sourceTree = "<group>"; };
 		04A98B5F19BE9B5A00ED474C /* CXYPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXYPlayer.m; sourceTree = "<group>"; };
+		74BC425119F75E9E00E6921E /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		74BC425319F7615400E6921E /* sound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sound.wav; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +99,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				74BC425219F75E9E00E6921E /* AVFoundation.framework in Frameworks */,
 				040BD2E919B58E9E001F6966 /* CoreGraphics.framework in Frameworks */,
 				040BD2ED19B58E9E001F6966 /* CoreData.framework in Frameworks */,
 				040BD2EB19B58E9E001F6966 /* UIKit.framework in Frameworks */,
@@ -138,6 +143,7 @@
 		040BD2E519B58E9E001F6966 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				74BC425119F75E9E00E6921E /* AVFoundation.framework */,
 				040BD2E619B58E9E001F6966 /* Foundation.framework */,
 				040BD2E819B58E9E001F6966 /* CoreGraphics.framework */,
 				040BD2EA19B58E9E001F6966 /* UIKit.framework */,
@@ -176,6 +182,7 @@
 				0444E00E19CAE5450029D3E0 /* CXYUtils.h */,
 				0444E00F19CAE5450029D3E0 /* CXYUtils.m */,
 				040BD2FD19B58E9E001F6966 /* Images.xcassets */,
+				74BC425319F7615400E6921E /* sound.wav */,
 				040BD2FA19B58E9E001F6966 /* CXYHBChess.xcdatamodeld */,
 				040BD2EF19B58E9E001F6966 /* Supporting Files */,
 			);
@@ -287,6 +294,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				74BC425419F7615400E6921E /* sound.wav in Resources */,
 				04217E0E19B8181C00E2A2F7 /* CXYGameSettingViewController.xib in Resources */,
 				04217E0419B80F6E00E2A2F7 /* CXYGameViewController.xib in Resources */,
 				040BD2F319B58E9E001F6966 /* InfoPlist.strings in Resources */,
