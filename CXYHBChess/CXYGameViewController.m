@@ -169,6 +169,9 @@
 // 播放声音
 - (void)onOpenSound
 {
+    AVAudioSession *audioSession = [AVAudioSession sharedInstance];
+    [audioSession setCategory:AVAudioSessionCategoryPlayback error:nil];
+    [audioSession setActive:YES error:nil];
     if (!audioPlayer) {
         NSError *error = nil;
         NSString *path = [[NSBundle mainBundle] pathForResource:@"sound" ofType:@"wav"];
