@@ -39,18 +39,25 @@
 
 - (IBAction)onSeleteColor:(UISegmentedControl*)sender
 {
-    _colorBlock(sender.selectedSegmentIndex);
+    if (self.colorBlock) {
+        self.colorBlock(sender.selectedSegmentIndex);
+    }
 }
 
 - (IBAction)onSeleteLevel:(UISegmentedControl*)sender
 {
-    _levelBlock(sender.selectedSegmentIndex);
+    if (self.levelBlock) {
+        self.levelBlock(sender.selectedSegmentIndex);
+    }
 }
 
 - (IBAction)onSaveSetting:(id)sender
 {
+    __typeof (&*self) __weak weakSelf = self;
     [self dismissViewControllerAnimated:YES completion:^{
-        _saveBlock();
+        if (weakSelf.saveBlock) {
+            weakSelf.saveBlock();
+        }
     }];
 }
 
