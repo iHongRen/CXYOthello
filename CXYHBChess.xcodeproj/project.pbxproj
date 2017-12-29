@@ -16,12 +16,6 @@
 		040BD2F919B58E9E001F6966 /* CXYAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 040BD2F819B58E9E001F6966 /* CXYAppDelegate.m */; };
 		040BD2FC19B58E9E001F6966 /* CXYHBChess.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 040BD2FA19B58E9E001F6966 /* CXYHBChess.xcdatamodeld */; };
 		040BD2FE19B58E9E001F6966 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 040BD2FD19B58E9E001F6966 /* Images.xcassets */; };
-		040BD30519B58E9F001F6966 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 040BD30419B58E9E001F6966 /* XCTest.framework */; };
-		040BD30619B58E9F001F6966 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 040BD2E619B58E9E001F6966 /* Foundation.framework */; };
-		040BD30719B58E9F001F6966 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 040BD2EA19B58E9E001F6966 /* UIKit.framework */; };
-		040BD30819B58E9F001F6966 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 040BD2EC19B58E9E001F6966 /* CoreData.framework */; };
-		040BD31019B58E9F001F6966 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 040BD30E19B58E9F001F6966 /* InfoPlist.strings */; };
-		040BD31219B58E9F001F6966 /* CXYHBChessTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 040BD31119B58E9F001F6966 /* CXYHBChessTests.m */; };
 		040BD31E19B59134001F6966 /* CXYMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 040BD31C19B59134001F6966 /* CXYMainViewController.m */; };
 		040BD31F19B59134001F6966 /* CXYMainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 040BD31D19B59134001F6966 /* CXYMainViewController.xib */; };
 		040BD32619B59ED8001F6966 /* CXYGameAreaView.m in Sources */ = {isa = PBXBuildFile; fileRef = 040BD32519B59ED8001F6966 /* CXYGameAreaView.m */; };
@@ -38,16 +32,6 @@
 		74BC425419F7615400E6921E /* sound.wav in Resources */ = {isa = PBXBuildFile; fileRef = 74BC425319F7615400E6921E /* sound.wav */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		040BD30919B58E9F001F6966 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 040BD2DB19B58E9E001F6966 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 040BD2E219B58E9E001F6966;
-			remoteInfo = CXYHBChess;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
 		040BD2E319B58E9E001F6966 /* CXYHBChess.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CXYHBChess.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		040BD2E619B58E9E001F6966 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -62,7 +46,6 @@
 		040BD2F819B58E9E001F6966 /* CXYAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CXYAppDelegate.m; sourceTree = "<group>"; };
 		040BD2FB19B58E9E001F6966 /* CXYHBChess.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CXYHBChess.xcdatamodel; sourceTree = "<group>"; };
 		040BD2FD19B58E9E001F6966 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		040BD30319B58E9E001F6966 /* CXYHBChessTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CXYHBChessTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		040BD30419B58E9E001F6966 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		040BD30D19B58E9F001F6966 /* CXYHBChessTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CXYHBChessTests-Info.plist"; sourceTree = "<group>"; };
 		040BD30F19B58E9F001F6966 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -107,17 +90,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		040BD30019B58E9E001F6966 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				040BD30519B58E9F001F6966 /* XCTest.framework in Frameworks */,
-				040BD30819B58E9F001F6966 /* CoreData.framework in Frameworks */,
-				040BD30719B58E9F001F6966 /* UIKit.framework in Frameworks */,
-				040BD30619B58E9F001F6966 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -135,7 +107,6 @@
 			isa = PBXGroup;
 			children = (
 				040BD2E319B58E9E001F6966 /* CXYHBChess.app */,
-				040BD30319B58E9E001F6966 /* CXYHBChessTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -238,24 +209,6 @@
 			productReference = 040BD2E319B58E9E001F6966 /* CXYHBChess.app */;
 			productType = "com.apple.product-type.application";
 		};
-		040BD30219B58E9E001F6966 /* CXYHBChessTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 040BD31819B58E9F001F6966 /* Build configuration list for PBXNativeTarget "CXYHBChessTests" */;
-			buildPhases = (
-				040BD2FF19B58E9E001F6966 /* Sources */,
-				040BD30019B58E9E001F6966 /* Frameworks */,
-				040BD30119B58E9E001F6966 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				040BD30A19B58E9F001F6966 /* PBXTargetDependency */,
-			);
-			name = CXYHBChessTests;
-			productName = CXYHBChessTests;
-			productReference = 040BD30319B58E9E001F6966 /* CXYHBChessTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -265,11 +218,6 @@
 				CLASSPREFIX = CXY;
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "___cxy___";
-				TargetAttributes = {
-					040BD30219B58E9E001F6966 = {
-						TestTargetID = 040BD2E219B58E9E001F6966;
-					};
-				};
 			};
 			buildConfigurationList = 040BD2DE19B58E9E001F6966 /* Build configuration list for PBXProject "CXYHBChess" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -284,7 +232,6 @@
 			projectRoot = "";
 			targets = (
 				040BD2E219B58E9E001F6966 /* CXYHBChess */,
-				040BD30219B58E9E001F6966 /* CXYHBChessTests */,
 			);
 		};
 /* End PBXProject section */
@@ -300,14 +247,6 @@
 				040BD2F319B58E9E001F6966 /* InfoPlist.strings in Resources */,
 				040BD31F19B59134001F6966 /* CXYMainViewController.xib in Resources */,
 				040BD2FE19B58E9E001F6966 /* Images.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		040BD30119B58E9E001F6966 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				040BD31019B58E9F001F6966 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -333,23 +272,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		040BD2FF19B58E9E001F6966 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				040BD31219B58E9F001F6966 /* CXYHBChessTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		040BD30A19B58E9F001F6966 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 040BD2E219B58E9E001F6966 /* CXYHBChess */;
-			targetProxy = 040BD30919B58E9F001F6966 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		040BD2F119B58E9E001F6966 /* InfoPlist.strings */ = {
@@ -403,7 +326,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 			};
@@ -435,7 +358,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -449,7 +372,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CXYHBChess/CXYHBChess-Prefix.pch";
 				INFOPLIST_FILE = "CXYHBChess/CXYHBChess-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -463,49 +386,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CXYHBChess/CXYHBChess-Prefix.pch";
 				INFOPLIST_FILE = "CXYHBChess/CXYHBChess-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
-			};
-			name = Release;
-		};
-		040BD31919B58E9F001F6966 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/CXYHBChess.app/CXYHBChess";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "CXYHBChess/CXYHBChess-Prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "CXYHBChessTests/CXYHBChessTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
-			};
-			name = Debug;
-		};
-		040BD31A19B58E9F001F6966 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/CXYHBChess.app/CXYHBChess";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "CXYHBChess/CXYHBChess-Prefix.pch";
-				INFOPLIST_FILE = "CXYHBChessTests/CXYHBChessTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
 			};
 			name = Release;
 		};
@@ -526,15 +409,6 @@
 			buildConfigurations = (
 				040BD31619B58E9F001F6966 /* Debug */,
 				040BD31719B58E9F001F6966 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		040BD31819B58E9F001F6966 /* Build configuration list for PBXNativeTarget "CXYHBChessTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				040BD31919B58E9F001F6966 /* Debug */,
-				040BD31A19B58E9F001F6966 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

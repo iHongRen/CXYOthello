@@ -84,10 +84,8 @@
         CXYNode* node = (CXYNode*)[view viewWithTag:i];
         if (node !=nil) {
             if (node.nodeState == KHINT) {
-                 node.nodeState = KCLEAR;
-                [UIView animateWithDuration:0 animations:^{
-                    node.transform = CGAffineTransformMakeScale(1, 1);
-                }];
+                node.nodeState = KCLEAR;
+                node.transform = CGAffineTransformIdentity;
             }
         }
         
