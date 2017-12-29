@@ -10,11 +10,9 @@
 
 @implementation CXYNode
 
-- (id)initWithFrame:(CGRect)frame
-{
+- (id)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
-        // Initialization code
         self.backgroundColor =[UIColor clearColor];
         self.adjustsImageWhenHighlighted = NO;
         self.nodeState = KCLEAR;
@@ -23,8 +21,7 @@
 }
 
 // 根据棋子状态改变 棋子背景
--(void)setNodeState:(NODESTATE)nodeState
-{
+-(void)setNodeState:(NODESTATE)nodeState {
     _nodeState = nodeState;
     switch (_nodeState) {
         case KBLACK:
@@ -54,8 +51,7 @@
 
 
 // 获取附近8个位置的tag
-- (NSArray*)getRecentNodesTagOftheNode
-{
+- (NSArray*)getRecentNodesTagOftheNode {
     NSMutableArray *recentNodesList = [[NSMutableArray alloc]init];
     NSArray *nums = @[@(-9),@(-8),@(-7),@(-1),@1,@7,@8,@9];
     for (int i=0; i<nums.count; ++i) {
@@ -95,13 +91,5 @@
     }
     return recentNodesList;
 }
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect
-{
-    // Drawing code
-}
-*/
 
 @end

@@ -9,10 +9,6 @@
 #ifndef CXYHBChess_CXYDefines_h
 #define CXYHBChess_CXYDefines_h
 
-
-//弹出信息
-#define kAlert(msg) [[[UIAlertView alloc] initWithTitle:@"" message:msg delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show]
-
 #define kScreenHeight   ([UIScreen mainScreen].bounds.size.height)
 #define kScreenWidth    ([UIScreen mainScreen].bounds.size.width)
 

@@ -15,43 +15,32 @@
 
 @implementation CXYGameAreaView
 {
-    int blackNum;
-    int whiteNum;
+    NSInteger blackNum;
+    NSInteger whiteNum;
       
     UILabel *blackLabel;
     UILabel *whiteLabel;
 }
 
-
-- (id)initWithFrame:(CGRect)frame
-{
-    self = [super initWithFrame:frame];
-    if (self) {
-        // Initialization code
-        
-    }
-    return self;
-}
-
-- (void)awakeFromNib
-{
-    blackLabel =(UILabel*)[self viewWithTag:-1000];
-    whiteLabel =(UILabel*)[self viewWithTag:-1001];
+- (void)awakeFromNib {
+    [super awakeFromNib];
+    blackLabel = (UILabel*)[self viewWithTag:-1000];
+    whiteLabel = (UILabel*)[self viewWithTag:-1001];
     [self onCreateNodes];
 }
 
-// 监听棋子点击
-- (void)onNodeClick:(CXYNode*)node
-{
-    [[NSNotificationCenter defaultCenter]postNotificationName:CXYPlayerDownNodeNotification object:node];
+
+- (void)onNodeClick:(CXYNode*)node {
+    if (self.chessDownBlock) {
+        self.chessDownBlock(node);
+    }
 }
 
 // 创建棋子到棋盘上
-- (void)onCreateNodes
-{
-    int k=0;
-    for (int i=0; i<kSize; i++) {
-        for (int j=0; j<kSize; j++) {
+- (void)onCreateNodes {
+    NSInteger k = 0;
+    for (NSInteger i=0; i<kSize; i++) {
+        for (NSInteger j=0; j<kSize; j++) {
             CXYNode *node = [[CXYNode alloc]initWithFrame:CGRectMake(10+kNodeWidth*j, 10+kNodeWidth*i, kNodeWidth, kNodeWidth)];
             node.tag = ++k;
             [node addTarget:self action:@selector(onNodeClick:) forControlEvents:UIControlEventTouchUpInside];
@@ -63,11 +52,10 @@
 }
 
 // 初始化棋盘上棋子状态
-- (void)onInitNodesWithPlayer:(CXYParent*)player
-{
-    int k=0;
-    for (int i=0; i<kSize; i++) {
-        for (int j=0; j<kSize; j++) {
+- (void)onInitNodesWithPlayer:(CXYParent*)player {
+    NSInteger k = 0;
+    for (NSInteger i=0; i<kSize; i++) {
+        for (NSInteger j=0; j<kSize; j++) {
             CXYNode *node = (CXYNode*)[self viewWithTag:++k];
             node.nodeState = KCLEAR;
         }
@@ -82,11 +70,10 @@
 }
 
 // 计算棋盘上白黑棋子个数
-- (void)onCalculateNodeNum
-{
+- (void)onCalculateNodeNum {
     blackNum = 0;
     whiteNum = 0;
-    for (int i=1; i<=kSize*kSize; i++) {
+    for (NSInteger i=1; i<=kSize*kSize; i++) {
         CXYNode *node = (CXYNode*)[self viewWithTag:i];
         if (node.nodeState == KBLACK) {
             blackNum++;
@@ -95,39 +82,38 @@
             whiteNum++;
         }
     }
-    blackLabel.text = [NSString stringWithFormat:@"%d",blackNum];
-    whiteLabel.text = [NSString stringWithFormat:@"%d",whiteNum];
+    blackLabel.text = [NSString stringWithFormat:@"%zd",blackNum];
+    whiteLabel.text = [NSString stringWithFormat:@"%zd",whiteNum];
 }
 
 // 判断获胜
-- (void)onJudgeWinForPlayer:(CXYParent*)player OtherPlayer:(CXYParent*)OtherPlayer
-{
+- (void)onJudgeWinForPlayer:(CXYParent*)player OtherPlayer:(CXYParent*)OtherPlayer {
     [self onCalculateNodeNum];
     if (0 == blackNum) {
         _gameState = GAMEOVER;
-        kAlert(kWhiteWin);
+         [CXYUtils showAlert:kWhiteWin];
          return;
     }
     if (0 == whiteNum) {
          _gameState = GAMEOVER;
-         kAlert(kBlackWin);
+          [CXYUtils showAlert:kBlackWin];
          return;
     }
     if ([[player getCurrentAllowDownNodesInView:self] count]== 0 && [[OtherPlayer getCurrentAllowDownNodesInView:self] count]== 0) {
         [self onCalculateNodeNum];
         if (blackNum > whiteNum) {
-             _gameState = GAMEOVER;
-              kAlert(kBlackWin);
-              return;
+            _gameState = GAMEOVER;
+            [CXYUtils showAlert:kBlackWin];
+            return;
         }
         if (whiteNum > blackNum) {
-             _gameState = GAMEOVER;
-             kAlert(kWhiteWin);
+            _gameState = GAMEOVER;
+            [CXYUtils showAlert:kWhiteWin];
             return;
         }
         if (whiteNum == blackNum) {
              _gameState = GAMEOVER;
-              kAlert(kDoubleWin);
+             [CXYUtils showAlert: kDoubleWin];
              return;
         }
 
@@ -135,25 +121,22 @@
 }
 
 
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect
-{
+- (void)drawRect:(CGRect)rect {
     // Drawing code
     [super drawRect:rect];
     
     //画棋盘
     CGContextRef ctx = UIGraphicsGetCurrentContext();
-    for (int i=0; i<=kSize; i++) {     //画横线
-        CGContextSetLineWidth(ctx, (i == 0 || i==kSize)?5:2.0);
+    for (NSInteger i=0; i<=kSize; i++) {     //画横线
+        CGContextSetLineWidth(ctx, (i == 0 || i==kSize)?5:2);
         CGContextSetStrokeColorWithColor(ctx, [[UIColor purpleColor] CGColor]);
         CGContextMoveToPoint(ctx, 10,10+kNodeWidth*i);
         CGContextAddLineToPoint(ctx, 10+kNodeWidth*kSize, 10+kNodeWidth*i);
         CGContextStrokePath(ctx);
     }
     
-    for (int i=0; i<=kSize; i++) {      //画竖线
-        CGContextSetLineWidth(ctx, (i == 0 || i==kSize)?5:2.0);
+    for (NSInteger i=0; i<=kSize; i++) {      //画竖线
+        CGContextSetLineWidth(ctx, (i == 0 || i==kSize)?5:2);
         CGContextSetStrokeColorWithColor(ctx, [[UIColor purpleColor] CGColor]);
         CGContextMoveToPoint(ctx, 10+kNodeWidth*i,10);
         CGContextAddLineToPoint(ctx, 10+kNodeWidth*i, 10+kNodeWidth*kSize);

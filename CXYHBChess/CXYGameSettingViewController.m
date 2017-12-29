@@ -8,9 +8,7 @@
 
 #import "CXYGameSettingViewController.h"
 
-
-@interface CXYGameSettingViewController ()
-{
+@interface CXYGameSettingViewController () {
     IBOutlet UISegmentedControl* colorSegment;
     IBOutlet UISegmentedControl* levelSegment;
 }
@@ -18,41 +16,26 @@
 
 @implementation CXYGameSettingViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
-    
-    colorSegment.selectedSegmentIndex = _colorIndex;
-    levelSegment.selectedSegmentIndex = _levelIndex;
-    // Do any additional setup after loading the view from its nib.
+    colorSegment.selectedSegmentIndex = self.colorIndex;
+    levelSegment.selectedSegmentIndex = self.levelIndex;
 }
 
 
-- (IBAction)onSeleteColor:(UISegmentedControl*)sender
-{
+- (IBAction)onSeleteColor:(UISegmentedControl*)sender {
     if (self.colorBlock) {
         self.colorBlock(sender.selectedSegmentIndex);
     }
 }
 
-- (IBAction)onSeleteLevel:(UISegmentedControl*)sender
-{
+- (IBAction)onSeleteLevel:(UISegmentedControl*)sender {
     if (self.levelBlock) {
         self.levelBlock(sender.selectedSegmentIndex);
     }
 }
 
-- (IBAction)onSaveSetting:(id)sender
-{
+- (IBAction)onSaveSetting:(id)sender {
     __typeof (&*self) __weak weakSelf = self;
     [self dismissViewControllerAnimated:YES completion:^{
         if (weakSelf.saveBlock) {
@@ -61,10 +44,5 @@
     }];
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 
 @end

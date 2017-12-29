@@ -12,6 +12,7 @@
 {
     NSInteger sum; //能吃对方的棋子数
 }
+
 - (instancetype)init
 {
     self = [super init];

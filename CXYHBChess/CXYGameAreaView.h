@@ -8,9 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "CXYParent.h"
+
+typedef void(^ChessDownBlock)(CXYNode *node);
 @interface CXYGameAreaView : UIView
 
-@property (nonatomic,assign)GAMESTATE gameState;
+@property (nonatomic,assign) GAMESTATE gameState;
+@property (nonatomic, copy) ChessDownBlock chessDownBlock;
 
 - (void)onInitNodesWithPlayer:(CXYParent*)player;
 - (void)onCalculateNodeNum;

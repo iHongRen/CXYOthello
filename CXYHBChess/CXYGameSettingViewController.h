@@ -14,11 +14,11 @@ typedef void (^SaveBlock)(void);
 #import <UIKit/UIKit.h>
 
 @interface CXYGameSettingViewController : UIViewController
-@property (nonatomic,copy)ColorBlock colorBlock;
-@property (nonatomic,copy)LevelBlock levelBlock;
-@property (nonatomic,copy)SaveBlock  saveBlock;
+@property (nonatomic, copy) ColorBlock colorBlock;
+@property (nonatomic, copy) LevelBlock levelBlock;
+@property (nonatomic, copy) SaveBlock  saveBlock;
 
-@property (nonatomic,assign)NSInteger colorIndex;
-@property (nonatomic,assign)NSInteger levelIndex;
+@property (nonatomic, assign) NSInteger colorIndex;
+@property (nonatomic, assign) NSInteger levelIndex;
 
 @end

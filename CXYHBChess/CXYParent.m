@@ -85,7 +85,9 @@
         if (node !=nil) {
             if (node.nodeState == KHINT) {
                 node.nodeState = KCLEAR;
-                node.transform = CGAffineTransformIdentity;
+                [UIView animateWithDuration:0 animations:^{
+                    node.transform = CGAffineTransformIdentity;
+                }];
             }
         }
         

@@ -20,10 +20,7 @@
 #define kWhiteWin   @"白方获胜"
 #define kDoubleWin  @"和棋"
 
-//通知标识
-extern NSString *const CXYAIDownNodeNotification;
-extern NSString *const CXYPlayerDownNodeNotification;
-
 @interface CXYUtils : NSObject
-
++ (void)showAlert:(NSString*)message;
++ (void)playChessSound;
 @end

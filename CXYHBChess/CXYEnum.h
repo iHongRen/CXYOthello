@@ -9,31 +9,27 @@
 #ifndef CXYHBChess_CXYEnum_h
 #define CXYHBChess_CXYEnum_h
 
-typedef NS_ENUM (NSInteger, NODESTATE)
-{
+typedef NS_ENUM (NSInteger, NODESTATE) {
     KBLACK = 0,
     KWHITE,
     KHINT,
     KCLEAR
 };
 
-typedef NS_ENUM (NSInteger,WHODOWNNODE)
-{
+typedef NS_ENUM (NSInteger,WHODOWNNODE) {
     PLAYER = 0,
     OTHERPLAYER,
     AICOMPUTER,
     NOBODY
 };
 
-typedef NS_ENUM (NSInteger,GAMESTATE)
-{
+typedef NS_ENUM (NSInteger,GAMESTATE) {
     GAMEREADY = 0,
     GAMEING,
     GAMEOVER
 };
 
-typedef NS_ENUM (NSInteger,GAMELEVEL)
-{
+typedef NS_ENUM (NSInteger,GAMELEVEL) {
     KPRIMARY = 0,
     KMIDDLE,
     KADVANCED
