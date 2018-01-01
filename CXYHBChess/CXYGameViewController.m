@@ -93,9 +93,7 @@
 
 
 - (void)onListenerBtnClick:(CXYNode*)node {
-    if (node.nodeState != KHINT) {
-        return;
-    }
+    if (node.nodeState != KHINT) return;
     if ([player isAllowDownInView:gameAreaView theNode:node]) {
         if (gameAreaView.gameState == GAMEREADY) {
             gameAreaView.gameState = GAMEING;
@@ -108,7 +106,6 @@
             [gameAreaView onJudgeWinForPlayer:aiComputer OtherPlayer:player];
             [self onOpenSound];
         }
-        
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             [self aiComputerPlayer];
         });
@@ -130,9 +127,7 @@
 
 // 重新开始游戏
 - (IBAction)onReStart:(id)sender {
-    if (GAMEREADY == gameAreaView.gameState) {
-        return;
-    }
+    if (GAMEREADY == gameAreaView.gameState) return;
     [self onInitChess];
 }
 

@@ -10,7 +10,7 @@
 #import "CXYNode.h"
 @interface CXYParent : NSObject
 
-@property (nonatomic,assign)NODESTATE owerStateColor;
+@property (nonatomic,assign) NODESTATE owerStateColor;
 
 
 - (BOOL)isAllowDownInView:(UIView*)view theNode:(CXYNode*)node;

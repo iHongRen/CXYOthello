@@ -10,18 +10,8 @@
 #import "CXYAIComputer.h"
 @implementation CXYParent
 
-- (instancetype)init
-{
-    self = [super init];
-    if (self) {
-     
-    }
-    return self;
-}
-
 // 判断是否允许你落子
-- (BOOL)isAllowDownInView:(UIView*)view theNode:(CXYNode*)node
-{
+- (BOOL)isAllowDownInView:(UIView*)view theNode:(CXYNode*)node {
     CXYNode *tempNode;
     for (int i=0; i<kSize; i++) {
         NSInteger nTag = [((NSArray*)[node getRecentNodesTagOftheNode])[i] integerValue]; //获取临近棋子
@@ -41,8 +31,7 @@
 }
 
 //得到当前可以落子的区域
-- (NSArray*)getCurrentAllowDownNodesInView:(UIView*)view
-{
+- (NSArray*)getCurrentAllowDownNodesInView:(UIView*)view {
     NSMutableArray *isAllowNodesDownList = [[NSMutableArray alloc]init];
     for (int i=1; i<=kSize*kSize; i++) {
         CXYNode* node = (CXYNode*)[view viewWithTag:i];
@@ -57,14 +46,12 @@
 }
 
 //设置可落子区域为 hint状态
-- (void)setHintState:(UIView*)view
-{
+- (void)setHintState:(UIView*)view {
     for (int i=1; i<=kSize*kSize; i++) {
         CXYNode* node = (CXYNode*)[view viewWithTag:i];
         if (node !=nil && (node.nodeState == KCLEAR || node.nodeState == KHINT)) {
             if ([self isAllowDownInView:view theNode:node]) {
                 node.nodeState = KHINT;
-    
                 [UIView beginAnimations:nil context:nil];
                 [UIView setAnimationDuration:0.5];
                 [UIView setAnimationRepeatCount:MAXFLOAT];
@@ -78,8 +65,7 @@
 }
 
 //清除hint状态
-- (void)clearHintState:(UIView*)view
-{
+- (void)clearHintState:(UIView*)view {
     for (int i=1; i<=kSize*kSize; i++) {
         CXYNode* node = (CXYNode*)[view viewWithTag:i];
         if (node !=nil) {
@@ -95,11 +81,8 @@
 }
 
 //改变棋子状态
-- (void)changeNodeStateInView:(UIView*)view theNode:(CXYNode*)node
-{
-    if (node == nil) {
-        return;
-    }
+- (void)changeNodeStateInView:(UIView*)view theNode:(CXYNode*)node {
+    if (!node) return;
     node.nodeState = self.owerStateColor;
     //判断 8个方向
     for (int i=0; i<kSize; i++) {
@@ -108,8 +91,7 @@
 }
 
 // 递归判断一个方向上是否可以翻对方的棋子
-- (void)changeNodeStateInView:(UIView*)view theNode:(CXYNode*)node withOrientation:(NSInteger)orientation
-{
+- (void)changeNodeStateInView:(UIView*)view theNode:(CXYNode*)node withOrientation:(NSInteger)orientation {
     NSInteger nTag = [((NSArray*)[node getRecentNodesTagOftheNode])[orientation] integerValue]; //获取临近棋子
     CXYNode *tempNode = (CXYNode*)[view viewWithTag:nTag];
     while (tempNode !=nil && tempNode.nodeState != node.nodeState && tempNode.nodeState == (self.owerStateColor==KWHITE?KBLACK:KWHITE)) {
@@ -130,10 +112,8 @@
 
 }
 
-
 // 根据保存的状态值，设置棋子状态
-- (void)unDoNodeStateInView:(UIView*)view Nodes:(NSArray*)nodesStateList
-{
+- (void)unDoNodeStateInView:(UIView*)view Nodes:(NSArray*)nodesStateList {
     for (int i=1; i<=nodesStateList.count; i++) {
         CXYNode *node = (CXYNode*)[view viewWithTag:i];
         node.nodeState = [nodesStateList[i-1]integerValue];
@@ -141,8 +121,7 @@
 }
 
 // 得到当前的棋子状态
-- (NSArray*)getCurrentNodeState:(UIView*)view
-{
+- (NSArray*)getCurrentNodeState:(UIView*)view {
     NSMutableArray *stateList = [[NSMutableArray alloc]init];
     for (int i=1; i<=kSize*kSize; i++) {
         CXYNode *node = (CXYNode*)[view viewWithTag:i];

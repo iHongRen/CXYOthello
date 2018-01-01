@@ -13,8 +13,7 @@
     NSInteger sum; //能吃对方的棋子数
 }
 
-- (instancetype)init
-{
+- (instancetype)init {
     self = [super init];
     if (self) {
         sum = 0;
@@ -23,8 +22,7 @@
 }
 
 // 选择AI难度
-- (CXYNode*)nodeTagForCreateInView:(UIView*)view Nodes:(NSArray*)nodesList Level:(GAMELEVEL)kLevel
-{
+- (CXYNode*)nodeTagForCreateInView:(UIView*)view Nodes:(NSArray*)nodesList Level:(GAMELEVEL)kLevel {
     switch (kLevel) {
         case KPRIMARY:
         {
@@ -49,16 +47,14 @@
 
 
 // 1.随机算法
-- (CXYNode*)randCreateNodeInView:(UIView*)view Nodes:(NSArray*)nodesList
-{
+- (CXYNode*)randCreateNodeInView:(UIView*)view Nodes:(NSArray*)nodesList {
     NSInteger index = arc4random()%nodesList.count;
     CXYNode *node = (CXYNode*)nodesList[index];
     return node;
 }
 
 // 2.贪心法 --- 取能吃对方最多棋子的位置
-- (CXYNode*)greedyCreateNodeInView:(UIView*)view Nodes:(NSArray*)nodesList
-{
+- (CXYNode*)greedyCreateNodeInView:(UIView*)view Nodes:(NSArray*)nodesList {
     NSArray *savedNodesStateList = [self getCurrentNodeState:view];
     NSMutableArray *changeSumList = [[NSMutableArray alloc]init];
     for (int i =0; i<nodesList.count; i++) {
@@ -73,8 +69,7 @@
     return node;
 }
 
-- (void)getChangeNodeStateNumForGreedy:(UIView*)view theNode:(CXYNode*)node
-{
+- (void)getChangeNodeStateNumForGreedy:(UIView*)view theNode:(CXYNode*)node {
     if (node == nil) {
         return;
     }
@@ -84,8 +79,7 @@
     }
 }
 
-- (void)getChangeNodeStateNumForGreedy:(UIView*)view theNode:(CXYNode*)node withOrientation:(NSInteger)orientation
-{
+- (void)getChangeNodeStateNumForGreedy:(UIView*)view theNode:(CXYNode*)node withOrientation:(NSInteger)orientation {
     NSInteger nTag = [((NSArray*)[node getRecentNodesTagOftheNode])[orientation] integerValue]; //获取临近棋子
     CXYNode *tempNode = (CXYNode*)[view viewWithTag:nTag];
     while (tempNode !=nil && tempNode.nodeState != node.nodeState && tempNode.nodeState == (self.owerStateColor==KBLACK?KWHITE:KBLACK)) {
@@ -103,8 +97,7 @@
 }
 
 // 2.贪心法2 -- 优先取边角上的位置
-- (CXYNode*)greedyCornerCreateNodeInView:(UIView*)view Nodes:(NSArray*)nodesList
-{
+- (CXYNode*)greedyCornerCreateNodeInView:(UIView*)view Nodes:(NSArray*)nodesList {
     CXYNode *node;
     NSMutableArray *cornerNodesList = [[NSMutableArray alloc]init];
     for (int i=0; i<nodesList.count; i++) {
@@ -116,7 +109,6 @@
             return [self greedyCreateNodeInView:view Nodes:cornerNodesList];
         }
      }
-    
     return [self greedyCreateNodeInView:view Nodes:nodesList];
 }
 

@@ -10,9 +10,8 @@
 
 @implementation CXYNode
 
-- (id)initWithFrame:(CGRect)frame {
-    self = [super initWithFrame:frame];
-    if (self) {
+- (instancetype)initWithFrame:(CGRect)frame {
+    if (self = [super initWithFrame:frame]) {
         self.backgroundColor =[UIColor clearColor];
         self.adjustsImageWhenHighlighted = NO;
         self.nodeState = KCLEAR;

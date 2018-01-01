@@ -116,7 +116,6 @@
              [CXYUtils showAlert: kDoubleWin];
              return;
         }
-
     }
 }
 
